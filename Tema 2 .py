@@ -5,4 +5,6 @@ else:
     print("Ma tahan programerida teha!")
 
 if paev == "laupäev" or paev == "pühapäev":
-    print("Tööpäev, pean tööl käima!")
+    print("Hurra")
+else:
+    print("Tuleb kooli minna")
