@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>4fcd83e8-25e4-4486-b4e4-26389703036a</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Oleinik_Python_ülesandeid.py</StartupFile>
+    <StartupFile>10 tasks.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,8 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Oleinik_Python_ülesandeid.py" />
+    <Compile Include="10 tasks.py" />
+    <Compile Include="Valed.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
