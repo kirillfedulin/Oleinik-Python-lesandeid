@@ -1,6 +1,3 @@
-class my_class(object):
-    pass
-
 from math import * #import oli valesti tehtud
 import math
 print("Ruudu karakteristikud") 
