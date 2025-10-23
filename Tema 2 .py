@@ -189,3 +189,6 @@
 #    
 #else:
 #    print("Hea taiga!")
+
+
+#ülesanne 9
