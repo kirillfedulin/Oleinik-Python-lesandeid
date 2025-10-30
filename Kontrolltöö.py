@@ -1,16 +1,19 @@
 
 #esimene ülesanne
 #n = int(input("Введите количество ёлок (1–9): "))
-#
-#kuusk = [
+#if n > 0 and n < 10:    
+#    kuusk = [
 #    "   /V\\   ",
 #    "  / V \\  ",
 #    " / V V \\ ",
 #    "/VV V VV\\"
-#]
+#    ]
 #
-#for rida in kuusk:
-#    print((" " + rida) * n)
+#    for rida in kuusk:
+#        print((" " + rida) * n)
+#else:
+#    print("Нельзя вводить число меньше 0 или больше 9")
+
 
 
 
