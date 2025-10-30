@@ -27,6 +27,7 @@
 #
 #print(f"Произведение всех нечетных чисел равно: {korrutis}")
 
+
 #kolme ülesanne
 #num = input("Введите числа через пробел:").split()
 #positivsed = 0
@@ -36,3 +37,28 @@
 #
 #print(f"Позтитвынх чисел {positivsed}")
 
+#nelja ülesanne 
+#arv = input("Введите число: ")
+#
+#paaris = 0
+#paaritud = 0
+#
+#for num in arv:
+#    num =int(num)
+#    if num % 2 == 0:
+#        paaris += 1
+#    else:
+#        paaritud += 1
+#
+#print(f"Четных чисел: {paaris}, нечетных {paaritud}")
+
+
+#viies ülesanne
+#A = int(input("Введите первое число: "))
+#B = int(input("Введите второе число: "))
+#
+#summa = 0
+#
+#for i in range(A, B + 1):
+#    summa += i
+#print(f"Сумма чисел от {A} до {B } равна {summa}")
