@@ -9,23 +9,21 @@
 #    "/VV V VV\\"
 #]
 #
-#sep = " "
-#
 #for rida in kuusk:
-#    print(sep.join([rida] * n))
+#    print((" " + rida) * n)
 
 
 
 #teine ülesanne
 #R = int(input("Введите число R: "))
 #
-#korrutis = 1
+#rez = 1
 #
 #for i in range(1, R+1):
-#    if i % 2!= 0:
-#        korrutis *= i
+#    if i % 2 != 0:
+#        rez = rez * i
 #
-#print(f"Произведение всех нечетных чисел равно: {korrutis}")
+#print(f"Произведение всех нечетных чисел равно: {rez}")
 
 
 #kolme ülesanne
