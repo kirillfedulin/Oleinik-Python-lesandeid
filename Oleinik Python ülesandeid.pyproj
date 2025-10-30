@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>4fcd83e8-25e4-4486-b4e4-26389703036a</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Tema 2 .py</StartupFile>
+    <StartupFile>Kontrolltöö.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="10 tasks.py" />
+    <Compile Include="Kontrolltöö.py" />
     <Compile Include="Tema 2 .py" />
     <Compile Include="Valed.py" />
   </ItemGroup>
