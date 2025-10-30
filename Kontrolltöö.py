@@ -28,11 +28,11 @@
 #print(f"Произведение всех нечетных чисел равно: {korrutis}")
 
 #kolme ülesanne
-num = int(input("Введите числа через пробел:"))
-positivsed = 0
-for arv in num:
-    if int(arv) > 0:
-        positivsed += 1
-
-print(f"Позтитвынх чисел {positivsed}")
+#num = input("Введите числа через пробел:").split()
+#positivsed = 0
+#for arv in num:
+#    if int(arv) > 0:
+#        positivsed += 1
+#
+#print(f"Позтитвынх чисел {positivsed}")
 
