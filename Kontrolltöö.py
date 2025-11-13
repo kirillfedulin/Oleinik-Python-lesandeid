@@ -4,15 +4,11 @@ try:
     n = int(input("Sisestage puude arv (1–9): "))
     
     if 1 <= n <= 9:
-        kuusk = [
-            "   /V\\   ",
-            "  / V \\  ",
-            " / V V \\ ",
-            "/VV V VV\\"
-        ]
+        print(("   /V\\   " + " ") * n)
+        print(("  / V \\  " + " ") * n)
+        print((" / V V \\ " + " ") * n)
+        print(("/VV V VV\\ " + " ") * n)
         
-        for rida in kuusk:
-            print((rida + " ") * n)
     else:
         print("Sa ei saa sisestada numbrit, mis on väiksem kui 1 ega suurem kui 9.")
 except ValueError:
