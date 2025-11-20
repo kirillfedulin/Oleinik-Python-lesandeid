@@ -1,1 +1,31 @@
+import random
 
+score = 0
+robot_score = 0
+
+
+player = []
+robot = []
+roudns = []
+
+while True:
+    list = ["paber", "kivi", "käärid"]
+
+    ask = input("Kas sa tahad mängida? Sisseta 'jah' voi 'ei': ")
+    if ask == "ei":
+       break
+    if ask == "jah":
+        ask2 = input("Vali 'paber', 'kivi' või 'käärid': ")
+        robot = random.choice(list)
+        print("Robot: ", robot)
+    if ask2 == robot:
+        print("viik!")
+    elif (ask2 == "paber" and robot == "kivi") or \
+         (ask2 == "kivi" and robot == "käärid") or \
+         (ask2 == "käärid" and robot == "paber"):     
+        score =+ 1
+        print("Sa võitsid!", score)
+    else:
+        robot_score += 1
+        print("Robot võitis!", robot_score)
+        
