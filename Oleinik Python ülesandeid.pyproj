@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>4fcd83e8-25e4-4486-b4e4-26389703036a</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Kontrolltöö.py</StartupFile>
+    <StartupFile>Tawaline_fail.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,8 @@
   <ItemGroup>
     <Compile Include="10 tasks.py" />
     <Compile Include="Kontrolltöö.py" />
+    <Compile Include="Mooduli_fail.py" />
+    <Compile Include="Tawaline_fail.py" />
     <Compile Include="Tema 2 .py" />
     <Compile Include="Valed.py" />
   </ItemGroup>
