@@ -1,5 +1,6 @@
 ﻿#5.1
 #esimene ülesanne
+from code import interact
 from importlib.metadata import diagnose
 import math
 
@@ -60,3 +61,25 @@ def square(külg: float) -> any:
     pindala = külg * külg
     diagonal = külg * math.sqrt(2)
     return perimitor, pindala, diagonal 
+
+
+
+def season (month: int) -> str:
+    if month in (12, 1, 2):
+        return "talv"
+    elif month in (3, 4, 5):
+        return "kevad"
+    elif month in (6, 7, 8):
+        return "suvi"
+    elif month in (9, 10, 11):
+        return "sügis"
+    else:
+        return "See ei ole kuu!"
+
+
+
+    def bank(a: float, years:int) -> float:
+        intress=0.1 #10%
+        for i in range(year):
+            a+=a*intress
+        return a

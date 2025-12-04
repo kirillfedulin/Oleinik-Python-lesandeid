@@ -29,4 +29,20 @@ from Mooduli_fail import *
 #    print(f"Ruudu ümbermõtt: {pindala}")
 #    print(f"Ruudu dioganal: {diagonal}")
 
+#for i in range(5):
+#    month = int_kontroll(input("Sisseta arv kuu: "))
+#    if month in (12, 1, 2):
+#        print("talv")
+#    elif month in (3, 4, 5):
+#        print("kevad")
+#    elif month in (6, 7, 8):
+#        print("suvi")
+#    elif month in (9, 10, 11):
+#        print("sügis")
+#    else:
+#        print("See ei ole kuu!")
 
+
+for i in range(5):
+    a = float_kontroll(input("Sisseta sinu euros: "))
+    a = (input("Sisseta aastat: "))
