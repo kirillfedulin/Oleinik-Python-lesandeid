@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>4fcd83e8-25e4-4486-b4e4-26389703036a</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Tawaline_fail.py</StartupFile>
+    <StartupFile>5.2\MyTawaline.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,11 +22,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="10 tasks.py" />
+    <Compile Include="5.2\MyModle.py" />
+    <Compile Include="5.2\MyTawaline.py" />
     <Compile Include="Kontrolltöö.py" />
     <Compile Include="Mooduli_fail.py" />
     <Compile Include="Tawaline_fail.py" />
     <Compile Include="Tema 2 .py" />
     <Compile Include="Valed.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="5.2\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
