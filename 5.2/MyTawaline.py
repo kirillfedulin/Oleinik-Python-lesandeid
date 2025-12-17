@@ -17,7 +17,11 @@ while True:
     ask = input(" ")
     
     if ask == "1":
-        regestreerimine(k, s)
+        ask = input("Kas te tahate regestreerimine sinu paaroliga või random?")
+        if ask == "random":
+            salasona(k) 
+        elif ask == "minu":
+            regestreerimine(k, s)
     elif ask == "2":
         autorimine(k, s)
     elif ask == "3":
