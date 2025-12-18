@@ -1,8 +1,8 @@
 from moodul import *
 
 def main():
-    s = []   # kasutajad
-    k = []   # paroolid
+    s = []  
+    k = []  
     current_user = None
 
     while True:
