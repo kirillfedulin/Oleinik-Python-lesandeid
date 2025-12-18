@@ -1,4 +1,4 @@
-from moodul import *
+from MyModle import *
 
 def main():
     s = []  
