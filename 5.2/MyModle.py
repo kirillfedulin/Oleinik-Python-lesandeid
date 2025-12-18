@@ -88,8 +88,8 @@ def autoriseeri(s, k):
     return nimi
 
 
-def muuda(s, k, current_user):
-    i = s.index(current_user)
+def muuda(s, k, praegune_kasutaja):
+    i = s.index(praegune_kasutaja)
 
     print("1 - Muuda nime")
     print("2 - Muuda parooli")
@@ -109,7 +109,7 @@ def muuda(s, k, current_user):
         k[i] = uus_parool
         print("Parool muudetud!")
 
-    return current_user
+    return praegune_kasutaja
 
 
 def unustatud_parool(s, k):
