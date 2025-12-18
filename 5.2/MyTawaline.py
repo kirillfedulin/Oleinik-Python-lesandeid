@@ -1,11 +1,11 @@
 from MyModle import *
 
-def main():
-    s = ["Danya", "Artur", "Nikita"]  
-    k = ["2412", "1twet", "1f33"]  
-    current_user = None
 
-    while True:
+s = ["Danya", "Artur", "Nikita"]  
+k = ["2412", "1twet", "1f33"]  
+praegune_kasutaja = None
+
+while True:
         print("\n1 - Registreerimine")
         print("2 - Autoriseerimine")
         print("3 - Nime/parooli muutmine")
@@ -15,16 +15,24 @@ def main():
         valik = input("Valik: ")
 
         if valik == "1":
-            registreeri(s, k)
+            ask = input("Kas te tahate teete sinu parool või random?")
+            if ask == "random":
+                rand(k)
+                rand_nimi(s)
+            elif ask == "minu":
+                rand_nimi(s)
+                no_rand_parool(k)
+            else:
+                print("Kirjuta palun minu või random")
 
         elif valik == "2":
-            current_user = autoriseeri(s, k)
+            praegune_kasutaja = autoriseeri(s, k)
 
         elif valik == "3":
-            if current_user is None:
+            if praegune_kasutaja is None:
                 print("Pole sisse logitud!")
             else:
-                current_user = muuda(s, k, current_user)
+                praegune_kasutaja = muuda(s, k, praegune_kasutaja)
 
         elif valik == "4":
             unustatud_parool(s, k)
@@ -36,6 +44,3 @@ def main():
         else:
             print("Vale valik!")
 
-
-if __name__ == "__main__":
-    main()
