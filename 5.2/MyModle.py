@@ -1,80 +1,67 @@
-﻿import string
-from random import choice
-
-k = []
-s = []
-
-def salasona(k: int):
-    sala = ""
-    for i in range(k):
-        t = choice(string.ascii_letters) 
-        num = choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
-        t_num = [t, str(num)]
-        sala += choice(t_num)
-    return sala
-
-def regestreerimine(k: list, s: list)->any:
-    while True:
-        nimi = input("\nSisesta uus kasutajanimi: ")
-        if nimi in k:
-            print("Nimi juba võetud!")
-            continue
-
-        parool = input("Sisesta parool: ")
-
-        k.append(nimi)
-        s.append(parool)
-        print("\nRegistreerimine õnnestus!\n")
+﻿def registreeri(s, k):
+    nimi = input("Sisesta uus kasutajanimi: ")
+    if nimi in s:
+        print("Nimi juba võetud!")
         return
 
+    parool = input("Sisesta parool: ")
+    if len(parool) < 4:
+        print("Parool liiga lühike!")
+        return
 
-def autorimine(k: list, s: list)->any:
-    while True:
-        nimi = input("\nSisesta kasutajanimi: ")
-        parool = input("Sisesta parool: ")
-
-        if nimi not in k:
-            print("\nSellist kasutajat pole!")
-            continue
-
-        i = s.append(nimi)
-        if s[i] != parool:
-            print("\nVale parool!")
-            continue
-
-        print("\nSisselogimine õnnestus!\n")
-        return nimi
+    s.append(nimi)
+    k.append(parool)
+    print("Registreerimine õnnestus!")
 
 
-def parolivahetus(k: list, s: list, ks: list)->any:
-    i = k.index(ks)
-    print("\n1 - Muuda nime")
-    print("2 - Muuda parooli\n")
+def autoriseeri(s, k):
+    nimi = input("Sisesta kasutajanimi: ")
+    parool = input("Sisesta parool: ")
+
+    if nimi not in s:
+        print("Sellist kasutajat pole!")
+        return None
+
+    i = s.index(nimi)
+    if k[i] != parool:
+        print("Vale parool!")
+        return None
+
+    print("Sisselogimine õnnestus!")
+    return nimi
+
+
+def muuda(s, k, current_user):
+    i = s.index(current_user)
+
+    print("1 - Muuda nime")
+    print("2 - Muuda parooli")
     valik = input("Valik: ")
 
     if valik == "1":
-        uus_nimi = input("\nUus nimi: ")
-        if uus_nimi in k:
-            print("\nNimi juba võetud!\n")
+        uus_nimi = input("Uus nimi: ")
+        if uus_nimi in s:
+            print("Nimi juba võetud!")
         else:
-            k[i] = uus_nimi
-            print("\nNimi muudetud!\n")
+            s[i] = uus_nimi
+            print("Nimi muudetud!")
             return uus_nimi
+
     elif valik == "2":
-        uus_parool = input("\nUus parool: ")
-        s[i] = uus_parool
-        print("\nParool muudetud!\n")
+        uus_parool = input("Uus parool: ")
+        k[i] = uus_parool
+        print("Parool muudetud!")
 
-    return ks
+    return current_user
 
 
-def paroolitaastamine(k: list, s: list)->any:
-    nimi = input("\nSisesta kasutajanimi: ")
-    if nimi not in k:
-        print("\nSellist kasutajat pole!\n")
+def unustatud_parool(s, k):
+    nimi = input("Sisesta kasutajanimi: ")
+    if nimi not in s:
+        print("Sellist kasutajat pole!")
         return
 
-    i = k.index(nimi)
+    i = s.index(nimi)
     uus = input("Sisesta uus parool: ")
-    s[i] = uus
+    k[i] = uus
     print("Parool taastatud!")
