@@ -1,8 +1,9 @@
 from moodul import *
 
 def main():
-    s = []   
-    k = [] 
+    s = []   # kasutajad
+    k = []   # paroolid
+    current_user = None
 
     while True:
         print("\n1 - Registreerimine")
