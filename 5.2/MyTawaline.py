@@ -1,8 +1,8 @@
 from MyModle import *
 
 def main():
-    s = []  
-    k = []  
+    s = ["Danya", "Artur", "Nikita"]  
+    k = ["2412", "1twet", "1f33"]  
     current_user = None
 
     while True:
