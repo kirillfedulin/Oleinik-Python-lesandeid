@@ -19,4 +19,8 @@ def loe_failist(failinimi: str)->list:
 loend=["Rida 1", "Rida 2"]
 failinimi=input("Sisesta faili nimi: ")
 kirjuta_falisse(failinimi, loend)
-
+sisu = loe_failist(failinimi)
+print("Faili sisu: ")
+print(sisu)
+for rida in sisu:
+    print(rida)
