@@ -4,9 +4,9 @@ def saada_email(saaja_email):
     kiri="""Tere see on test https://github.com/kirillfedulin/Oleinik-Python-lesandeid/blob/master/email.py"""
     teema="Test e-kiri Pythonist"
     saatja_email="kirill.fedulin22@gmail.com"
-    parool=input("Sisesta rakenduse parool: ")
+    parool=input("Sisesta rakenduse parool: ") #mbec buaz lxco hkpk
     smtp_server="smtp.gmail.com"
-    port=587
+    port=587 
     context=ssl.create_default_context()
     msg=EmailMessage()
     msg.set_content(kiri)
@@ -23,5 +23,6 @@ def saada_email(saaja_email):
             server.send_message(msg) 
     except Exception as e:
         print(f"Midagi läks valesti... {e}")
+
 kellele=input("Sisesta saaja e-posti aadress: ")
 saada_email(kellele)
