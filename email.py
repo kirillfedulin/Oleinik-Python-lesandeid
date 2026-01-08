@@ -1,9 +1,9 @@
 import smtplib, ssl
 from email.message import EmailMessage
 def saada_email(saaja_email):
-    kiri="""Tere see on test https://github.com/Hespie72/VitaliiAbdulov2/blob/master/VitaliiAbdulov2/email1message.py"""
+    kiri="""Tere see on test https://github.com/kirillfedulin/Oleinik-Python-lesandeid/blob/master/email.py"""
     teema="Test e-kiri Pythonist"
-    saatja_email="vitalya.abdulov.1979@gmail.com"
+    saatja_email="kirill.fedulin22@gmail.com"
     parool=input("Sisesta rakenduse parool: ")
     smtp_server="smtp.gmail.com"
     port=587
@@ -17,8 +17,8 @@ def saada_email(saaja_email):
         with smtplib.SMTP(smtp_server,port) as server:
             server.starttls(context=context)
             server.login(saatja_email,parool)
-            server.send_message(msg) #kui ei kasuta with siis on vaja sulgeda server.quit()
+            server.send_message(msg) 
     except Exception as e:
-        print(f"Midagi l‰ks valesti... {e}")
+        print(f"Midagi l√§ks valesti... {e}")
 kellele=input("Sisesta saaja e-posti aadress: ")
 saada_email(kellele)
