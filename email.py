@@ -1,28 +1,48 @@
-import smtplib, ssl
+import smtplib
 from email.message import EmailMessage
-def saada_email(saaja_email):
-    kiri="""Tere see on test https://github.com/kirillfedulin/Oleinik-Python-lesandeid/blob/master/email.py"""
-    teema="Test e-kiri Pythonist"
-    saatja_email="kirill.fedulin22@gmail.com"
-    parool=input("Sisesta rakenduse parool: ") #mbec buaz lxco hkpk
-    smtp_server="smtp.gmail.com"
-    port=587 
-    context=ssl.create_default_context()
-    msg=EmailMessage()
-    msg.set_content(kiri)
-    msg["Subject"]=teema
-    msg["From"]=saatja_email
-    msg["To"]=saaja_email
-    with open("image.png", "rb") as f:
-        image_data = f.read()
-    msg.add_attachment(image_data, maintype="image", subtype="png")
-    try:
-        with smtplib.SMTP(smtp_server,port) as server:
-            server.starttls(context=context)
-            server.login(saatja_email,parool)
-            server.send_message(msg) 
-    except Exception as e:
-        print(f"Midagi läks valesti... {e}")
 
-kellele=input("Sisesta saaja e-posti aadress: ")
-saada_email(kellele)
+email_subject = "Email test Pythonist"
+while True:
+    sender_email_address = input("kirjuta teie email adress: ")
+    if "@" not in sender_email_address or "." not in sender_email_address:
+        print("Palun sisesta kehtiv emaili aadress.")
+    else:
+        try:
+            receiver_email_address = input("kirjuta saaja email adress: ")
+            email_password = input("Sisesta oma emaili rakenduse parool: ")
+            print("Proovin saata emaili...")
+            break
+        except Exception as e:
+            print("Tekkis viga:", e)
+
+# mbec buaz lxco hkpk
+email_smtp = "smtp.gmail.com"
+message = EmailMessage()
+
+with open('message.html', 'r', encoding='utf-8') as file:
+ file_content = file.read()
+message.set_content(file_content, subtype='html')
+
+with open('Python-logo-notext.svg.png', 'rb') as file:
+ image_data = file.read()
+message.add_attachment(image_data, maintype='image', subtype='png', filename='Python-logo-notext.svg.png')
+
+message['Subject'] = email_subject
+message['From'] = sender_email_address
+message['To'] = receiver_email_address
+
+
+server = smtplib.SMTP(email_smtp, '587')
+
+server.ehlo()
+
+server.starttls()
+
+server.login(sender_email_address, email_password)
+
+server.send_message(message)
+
+
+server.quit()
+
+
