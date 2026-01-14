@@ -23,9 +23,9 @@ with open('message.html', 'r', encoding='utf-8') as file:
  file_content = file.read()
 message.set_content(file_content, subtype='html')
 
-with open('Python-logo-notext.svg.png', 'rb') as file:
+with open('wonderful-artistic-snake-python-coiled-authentic-png.png', 'rb') as file:
  image_data = file.read()
-message.add_attachment(image_data, maintype='image', subtype='png', filename='Python-logo-notext.svg.png')
+message.add_attachment(image_data, maintype='image', subtype='png', filename='wonderful-artistic-snake-python-coiled-authentic-png.png')
 
 message['Subject'] = email_subject
 message['From'] = sender_email_address
@@ -44,5 +44,4 @@ server.send_message(message)
 
 
 server.quit()
-
 
