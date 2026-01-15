@@ -1,38 +1,40 @@
 import os
 import glob
 
+# Otsib praegusest kataloogist failid kasutaja antud laiendiga
 def leia_projektifailid():
     fail = input("sisesta faililaiendi ilma punktita: ")
-    failid = glob.glob(f'*.{fail}')
+    failid = glob.glob(f'*.{fail}')  # leiab k√µik vastava laiendiga failid
     print(f"Leitud failid: {failid}")
     return f"'.'+{fail} failid, {failid}"
 
+# Loeb faili sisu ja otsib kindlat s√µna
 def analuusi_faili_sisu():
     while True:
         failitee = input("Sisesta faili tee: ")
-        if not os.path.isfile(failitee):
+        if not os.path.isfile(failitee):  # kontrollib, kas fail eksisteerib
             print("Faili ei leitud, proovi uuesti.")
         else:
-            fail = open(failitee, 'r', encoding='utf-8')
-            sisu = fail.read()
-            sına = input("Sisesta sına, mida otsida: ")
-            sına_count = sisu.lower().count(sına.lower())
-            length = len(sisu)
+            fail = open(failitee, 'r', encoding='utf-8')  # avab faili
+            sisu = fail.read()  # loeb kogu faili sisu
+            s√µna = input("Sisesta s√µna, mida otsida: ")
+            s√µna_count = sisu.lower().count(s√µna.lower())  # loendab s√µna esinemised
+            length = len(sisu)  # faili pikkus m√§rkides
         
-            fail.close()
+            fail.close()  # sulgeb faili
             print(f"Sisu: {sisu}")
-            print(f"Sına '{sına}' esinemiste arv: {sına_count}")
-            print(f"Faili pikkus: {length} t‰hem‰rki")
+            print(f"S√µna '{s√µna}' esinemiste arv: {s√µna_count}")
+            print(f"Faili pikkus: {length} t√§hem√§rki")
             break
-    return f"{sına_count}\nFaili pikkus: {length}\nSISU FAILIST:\n {sisu}\n"
+    return f"{s√µna_count}\nFaili pikkus: {length}\nSISU FAILIST:\n {sisu}\n"
 
-
+# Loob, kustutab v√µi otsib kataloogi
 def loo_raporti_kataloog():
     while True:
         failitee = input("Sisesta raporti kataloogi tee: ")
-        ask = input("Kas soovid lisada vıi kustutada vıi otsida kataloogi? (l/k/o)").lower()
+        ask = input("Kas soovid lisada v√µi kustutada v√µi otsida kataloogi? (l/k/o)").lower()
         
-        if ask == 'l':
+        if ask == 'l':  # kataloogi loomine
             if not os.path.isdir(failitee):
                 os.mkdir(failitee)
                 return f"Kataloog {failitee} on loodud"
@@ -40,26 +42,19 @@ def loo_raporti_kataloog():
                 print("Kataloog on juba olemas.")
                 break
 
-                
-        elif ask == 'k':
+        elif ask == 'k':  # kataloogi kustutamine
             if not os.path.isdir(failitee):
                 print("Kataloogi ei leitud. Palun proovi uuesti.")  
-                os.rmdir(failitee)
-                return f"Kataloog {failitee} on kustutatud"
             else:
-                try:
-                    ask2 = input("Kataloogi ei leitud, kas soovid just kustutada? (jah/ei)")
-                    if ask2.lower() == 'jah':
-                        os.rmdir(failitee)
-                        return f"Kataloog {failitee} on kustutatud"
-                    elif ask2.lower() == 'ei':
-                        print("Kataloogi kustutamine katkestatud.")
-                        break
-                except:
-                    print("palun kirjuta jah vıi ei")
+                ask2 = input("Kas soovid kataloogi kustutada? (jah/ei)")
+                if ask2.lower() == 'jah':
+                    os.rmdir(failitee)
+                    return f"Kataloog {failitee} on kustutatud"
+                else:
+                    print("Kataloogi kustutamine katkestatud.")
                     break
                 
-        elif ask == 'o':
+        elif ask == 'o':  # kataloogi otsimine
             if not os.path.isdir(failitee):
                 print("Kataloogi ei leitud.")
             else:
@@ -68,18 +63,15 @@ def loo_raporti_kataloog():
       
     return f"{failitee} on leitud"
 
+# Leiab failid, mis algavad kindla t√§hega
 def leia_failid_algustahega():
-
     while True:
-        algustaht = input("Sisesta algust‰ht: ")
+        algustaht = input("Sisesta algust√§ht: ")
         if not algustaht.isalpha() or len(algustaht) != 1:
-            print("Palun sisesta ¸ks t‰ht.")
+            print("Palun sisesta √ºks t√§ht.")
         else:
             break
-    failid = glob.glob(f'{algustaht}*')
+
+    failid = glob.glob(f'{algustaht}*')  # leiab failid algust√§he j√§rgi
     print(f"Leitud failid: {failid}")
-    return f"algust‰ht failid {algustaht}:\nFailid: {failid}\n Kui palju: {len(failid)}"
-
-
-
-
+    return f"algust√§ht failid {algustaht}:\nFailid: {failid}\nKui palju: {len(failid)}"
